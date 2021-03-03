@@ -1,7 +1,7 @@
 .gridSquare{
     width:200px;
     height:200px;
-
+    background-color: blue;
 }
 
 .gridSquare:hover{
@@ -9,8 +9,9 @@
     background-color: black;
 }
 body{
-    background-color: black;
+    background-color: white;
 }
+
 #divContainer
 {
     display: grid;
@@ -21,7 +22,7 @@ body{
     margin-top: 1.5%;
     border:10px;
     border-style: solid;
-    border-color: green;
+    border-color: rgb(159, 177, 159);
     background-color: white;
 
 }

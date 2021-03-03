@@ -5,24 +5,34 @@ function createGrid(){
     container.appendChild(gridDiv);
 }
 
-function changeGridSize(n){
-    let squareHeight = toString(parseInt(800/n));
-    let squareWidth = toString(parseInt(800/n));
-    let squares = document.querySelectorAll('.gridSquare');
-    let container = document.querySelector('#divContainer');
-
-    for(let i = 0; i<n;i++){
-        squares[i].style.width = squareWidth;
-        squares[i].style.height = squareHeight;
-    }
-
-    
-    container.style.gridTemplateColumns = `${squareWidth}px ${squareWidth}px ${squareWidth}px ${squareWidth}px`;
-    
-}
 
 for(let i=0; i<16; i++){
     createGrid();
+}
+
+
+function changeGridSize(n){
+    let squareHeight = 800/Math.sqrt(n,2);
+    let squareWidth = 800/Math.sqrt(n,2);
+    let squares = document.querySelectorAll('.gridSquare');
+    let container = document.querySelector('#divContainer');
+    let gridString='';
+    
+
+    for(let i = 0; i<n; i++){
+        squares[i].style.width = squareWidth + 'px';
+        squares[i].style.height = squareHeight + 'px';
+        
+        
+    }
+    for(let j =0; j<Math.sqrt(n,2);j++){
+        gridString+=squareHeight + 'px ';
+    }
+
+    console.log(gridString);
+
+    container.style.gridTemplateColumns = gridString;
+    
 }
 
 function clearSquares(){
