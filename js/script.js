@@ -76,7 +76,7 @@ function changeColor(e){
     let newOpacity = parseFloat(opacity)+.1;
     
     idString.style.opacity = `${newOpacity}`;
-    
+    idString.style.backgroundColor = generateRandomColor();    
 
 }
 
