@@ -1,0 +1,27 @@
+.gridSquare{
+    width:200px;
+    height:200px;
+
+}
+
+.gridSquare:hover{
+    color: gold;
+    background-color: black;
+}
+body{
+    background-color: black;
+}
+#divContainer
+{
+    display: grid;
+    grid-template-columns: 200px 200px 200px 200px;
+    width: 800px;
+    height: 800px;
+    margin:auto;
+    margin-top: 1.5%;
+    border:10px;
+    border-style: solid;
+    border-color: green;
+    background-color: white;
+
+}
