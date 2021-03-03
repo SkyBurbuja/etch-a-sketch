@@ -1,15 +1,12 @@
 .gridSquare{
     width:200px;
     height:200px;
-    background-color: blue;
+    background-color: white;
 }
 
-.gridSquare:hover{
-    color: gold;
-    background-color: black;
-}
+
 body{
-    background-color: white;
+    background-color: black;
 }
 
 #divContainer
@@ -24,5 +21,6 @@ body{
     border-style: solid;
     border-color: rgb(159, 177, 159);
     background-color: white;
+    
 
 }

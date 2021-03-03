@@ -1,13 +1,14 @@
-function createGrid(){
+function createGrid(i){
     const container = document.querySelector('#divContainer');
     const gridDiv = document.createElement('div');
     gridDiv.setAttribute('class','gridSquare');
+    gridDiv.setAttribute('id',`div${i}`);
     container.appendChild(gridDiv);
 }
 
 
 for(let i=0; i<16; i++){
-    createGrid();
+    createGrid(i);
 }
 
 
@@ -51,12 +52,32 @@ function createSketchBox(){
     n = parseInt(n);
 
     for(let i = 0; i < n; i++){
-        createGrid();
+        createGrid(i);
     }
 
     changeGridSize(n);
+    const divToChange = document.querySelectorAll('.gridSquare');
+    divToChange.forEach(div => div.addEventListener('mouseover',changeColor));
+}
+
+function generateRandomColor()
+{
+    let randomColor = '#'+Math.floor(Math.random()*16777215).toString(16);
+    return randomColor;
+    //random color will be freshly served
+}
+
+function changeColor(e){
+    let newId = e.target.id;
+    let idString = document.querySelector(`#${newId}`);
+    idString.style.backgroundColor = generateRandomColor();
 
 }
 
+
+
 const reset = document.querySelector('button');
 reset.addEventListener('click',createSketchBox);
+
+const divToChange = document.querySelectorAll('.gridSquare');
+divToChange.forEach(div => div.addEventListener('mouseover',changeColor));
