@@ -8,26 +8,26 @@ function createGrid(i){
 }
 
 
-for(let i=0; i<16; i++){
+for(let i=0; i<16*16; i++){
     createGrid(i);
 }
 
 
 function changeGridSize(n){
-    let squareHeight = 800/Math.sqrt(n,2);
-    let squareWidth = 800/Math.sqrt(n,2);
+    let squareHeight = 640/n;
+    let squareWidth = 640/n;
     let squares = document.querySelectorAll('.gridSquare');
     let container = document.querySelector('#divContainer');
     let gridString='';
     
 
-    for(let i = 0; i<n; i++){
+    for(let i = 0; i<n*n; i++){
         squares[i].style.width = squareWidth + 'px';
         squares[i].style.height = squareHeight + 'px';
         
         
     }
-    for(let j =0; j<Math.sqrt(n,2);j++){
+    for(let j =0; j<n;j++){
         gridString+=squareHeight + 'px ';
     }
 
@@ -49,10 +49,12 @@ function clearSquares(){
 function createSketchBox(){
     clearSquares();
 
-    let n = prompt('What size?', '16');
+    let n = prompt('What Size? Please enter a square number', '16');
     n = parseInt(n);
 
-    for(let i = 0; i < n; i++){
+
+
+    for(let i = 0; i < n*n; i++){
         createGrid(i);
     }
 
