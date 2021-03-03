@@ -3,6 +3,7 @@ function createGrid(i){
     const gridDiv = document.createElement('div');
     gridDiv.setAttribute('class','gridSquare');
     gridDiv.setAttribute('id',`div${i}`);
+    gridDiv.setAttribute('style','opacity: 0');
     container.appendChild(gridDiv);
 }
 
@@ -64,13 +65,16 @@ function generateRandomColor()
 {
     let randomColor = '#'+Math.floor(Math.random()*16777215).toString(16);
     return randomColor;
-    //random color will be freshly served
 }
 
 function changeColor(e){
     let newId = e.target.id;
     let idString = document.querySelector(`#${newId}`);
-    idString.style.backgroundColor = generateRandomColor();
+    let opacity = idString.style.opacity;
+    let newOpacity = parseFloat(opacity)+.1;
+    
+    idString.style.opacity = `${newOpacity}`;
+    //idString.style.backgroundColor = 'black';
 
 }
 
